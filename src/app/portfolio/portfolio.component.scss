@@ -1,0 +1,225 @@
+
+.hero_image{
+  height: 450px;
+}
+
+h2 span{
+  font-weight: 100;
+}
+
+@media (min-width: 768px) {
+
+  .container_skills .row{
+    margin-bottom:  2rem;
+  }
+
+  .container_skills .row:last-child{
+    margin-bottom:  0rem;
+  }
+
+  .hero_image{
+    height: auto;
+  }
+
+ }
+
+.container_skills{
+  margin-top: 4rem;
+}
+
+.container_skills .col-6 {
+  margin-bottom: 1rem;
+
+}
+
+.pad {
+    margin-top: 3rem !important;
+}
+
+.container_skills .col-md-3{
+  display: flex;
+}
+
+.container_skills span{
+  margin-left: 1rem;
+}
+
+ article h2{
+  font-size: 2.5rem;
+  position: relative;
+  margin-bottom: 6rem;
+  margin-top: 3rem;
+}
+
+article h2:after{
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 33px;
+  background-color: #ff4338;
+  bottom: 0;
+  left: 0;
+}
+
+hr{
+  margin-top: 7rem;
+  margin-bottom: 3rem;
+}
+
+
+// ABOUT
+
+.about_card_text{
+  background: #25457a;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  font-size: 1rem;
+  line-height: 2.5;
+}
+
+.about_card .col-6{
+  margin: 0px;
+}
+
+.about_card .col-md-6{
+  max-height: 345px;
+}
+
+.about_card p:first-child:first-letter {
+  color: #fdfdfd;
+  float: left;
+  font-size: 3rem;
+  line-height: 63px;
+  padding-top: 0px;
+  padding-right: 8px;
+  padding-left: 0px;
+}
+
+.ahm{
+  background-image: url('../../assets/aboutAngel/img.jpg');
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  height: 345px;
+
+}
+
+// Experience
+
+.experience_card{
+  background-color: whitesmoke;
+  padding: 1.5rem;
+  margin-bottom: 8rem;
+}
+
+.experience_card ul{
+  font-size: .9rem;
+  margin-top: 2rem;
+  margin-left: 0;
+    padding-left: 1rem;
+}
+
+
+.experience_card li{
+  margin-top: .5rem;
+}
+
+.experience_card img{
+  width: 18rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+  display: block;
+  box-shadow: 0px 0px 6px #c5c5c5;
+}
+@media (min-width: 768px) {
+
+  .experience_card img{
+    width: 16rem;
+    position: absolute;
+    top: -8rem;
+    right: 0;
+    left: 0;
+  }
+
+}
+
+@media (min-width: 992px) {
+  .experience_card ul{
+    top: -10rem;
+  }
+}
+
+.job_title{
+  background-color: #ff4338;
+    padding: .2rem 0.6rem;
+    color: white;
+    border-radius: 5rem;
+    letter-spacing: .5px;
+    margin-top: .5rem;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.related_work-cards img{
+  box-shadow: 0px 0px 8px #9E9E9E;
+}
+
+
+.related_work-cards .row .col-3:first-child{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+// .related_work-cards{
+//   column-count: 4;
+// }
+
+// .related_work-cards div{
+//   box-shadow: 2px 2px 2px black;
+// }
+
+// Social
+.social_card .row{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social_card div{
+  padding: 1rem 1rem 4rem 1.5rem;
+}
+
+.social_card svg{
+  height: 2rem;
+}
+
+// @media (min-width: 768px) {
+
+//   .social_card div{
+//     padding: 3rem 1.5rem;
+
+//   }
+
+//  }
+
+// footer
+
+.footer_card{
+  background-color: whitesmoke;
+  padding: 4rem;
+  text-align: center;
+}
+
+footer span{
+  margin-top: 3rem;
+    display: block;
+    color: #2b2b2b;
+    font-size: 0.8rem;
+    letter-spacing: .5px;
+}
+
+
