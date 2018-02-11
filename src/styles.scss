@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import './bootstrap4/scss/bootstrap.scss';
 
+*{
+  transition: all .3s;
+}
+
 
 h1,
 h2,
@@ -32,3 +36,61 @@ h3 {
 .hero_title h3 {
   font-size: 1.5rem;
 }
+
+
+// Blog section
+
+.blog_body{
+  margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.section_heading{
+  border-bottom: solid 1px #d8d8d8;
+  text-align: center;
+  padding-bottom: 1rem;
+  display: inline-block;
+  width: 100%;
+}
+
+.section_title{
+  margin-top: 3rem;
+  font-family: 'Roboto Slab', serif;
+    letter-spacing: 0;
+}
+
+.author_time{
+  display: flex;
+  align-items: center;
+  color: #3a3a3a;
+  font-size: .8rem;
+  margin: .5rem 0rem;
+}
+
+.author_time *{
+  margin-right: 1rem;
+}
+
+.author_time svg{
+  margin-right: .5rem;
+}
+
+
+
+
+
+// Fix
+// flix float
+
+section.col-md-8{
+  float: left;
+  display: inline-block;
+}
+
+aside.col-md-4{
+  float: right;
+  display: inline-block;
+}
+
+
+

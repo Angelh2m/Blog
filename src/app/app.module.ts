@@ -1,12 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
-
 import { AppComponent } from './app.component';
+
+// Import the pages component
+import { PagesComponent } from './pages/pages.component';
+// Import portfolio section
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { APP_ROUTES } from './app.routes';
-import { PagesComponent } from './pages/pages.component';
+// Import all shared Modules
+import { SharedModule } from './shared/shared.module';
+
 
 
 // Router
@@ -16,12 +19,13 @@ import { PagesComponent } from './pages/pages.component';
   declarations: [
     AppComponent,
     PagesComponent,
-    PortfolioComponent
+    PortfolioComponent,
+
   ],
   imports: [
     BrowserModule,
+    SharedModule,
     APP_ROUTES
-
   ],
   providers: [],
   bootstrap: [AppComponent]

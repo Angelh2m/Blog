@@ -9,7 +9,8 @@ const appRoutes: Routes = [
   {
     path: '',
     component: PagesComponent,
-    // loadChildren: './pages/pages.module#PagesModule'
+    // This will load the pages module with all the child routes
+    loadChildren: './pages/pages.module#PagesModule'
   },
 ];
 

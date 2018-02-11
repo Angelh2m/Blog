@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.scss']
+  selector: 'app-categories',
+  templateUrl: './categories.component.html',
+  styleUrls: ['./categories.component.scss']
 })
-export class HomePageComponent implements OnInit {
+export class CategoriesComponent implements OnInit {
 
   images = {
     image1: '../../assets/local/image1.jpeg',
@@ -14,6 +14,7 @@ export class HomePageComponent implements OnInit {
     hero: '../../assets/local/hero.jpeg',
     food: '../../assets/local/imagefood.jpg',
   };
+
 
 
   constructor() { }

@@ -1,0 +1,122 @@
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.header a{
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.header a:first-child{
+  margin-left: 0rem;
+  cursor: pointer;
+}
+
+.main_menu{
+  display: none
+}
+
+.header_social{
+  display: none
+}
+
+// Second Level
+
+// Mobile Menu
+.main_menu_mobile{
+  display: block;
+  text-align: center;
+  opacity: 0;
+}
+
+.main_menu_mobile a{
+  color: #2f2f2f;
+}
+
+.main_menu_mobile a.active{
+  color: #007bff;
+}
+
+.main_menu_mobile ul{
+  position: absolute;
+  z-index: 999;
+  background-color: white;
+  width: 100%;
+  padding-left: 0px;
+  color: #333;
+  font-weight: 100;
+  font-family: roboto;
+}
+
+
+.active{
+  display: block;
+  opacity: 1;
+}
+
+.active ul{
+  position: absolute;
+  z-index: 999;
+  background-color: white;
+  width: 100%;
+  padding-left: 0px;
+
+}
+
+.active li{
+  display: block;
+  padding: 1rem 0px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .main_menu{
+    display: block;
+    opacity: 1;
+  }
+
+}
+
+@media (min-width: 576px) {
+
+  .main_navigation li{
+    display: inline-block;
+    margin: 0rem 2rem;
+    font-family: roboto;
+    padding: 0rem 0px;
+    font-weight: 100;
+    color: #333;
+  }
+
+  .main_navigation ul{
+    position: relative;
+    padding: 1rem;
+    padding-top: 1rem;
+    border-top: solid 1px #dedede;
+    border-bottom: solid 1px #dedede;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+}
+
+
+
+@media (min-width: 768px) {
+  .header_social{
+    display: block;
+  }
+
+  .header_responsive{
+    display: none;
+  }
+
+}
+
+
+
+

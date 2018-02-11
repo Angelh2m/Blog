@@ -1,0 +1,33 @@
+
+.row{
+  display: inline-block;
+  width: 100%;
+}
+
+
+.section_heading{
+  border-bottom: solid 1px #d8d8d8;
+  text-align: center;
+}
+
+.section_title{
+  margin-top: 3rem;
+}
+
+.author_time{
+  display: flex;
+  align-items: center;
+  margin-top: .5rem;
+  color: #3a3a3a;
+  font-size: .8rem;
+}
+
+.author_time *{
+  margin-right: 1rem;
+}
+
+.author_time svg{
+  margin-right: .5rem;
+}
+
+
