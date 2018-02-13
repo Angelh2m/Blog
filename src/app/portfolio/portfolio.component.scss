@@ -29,20 +29,23 @@ h2 span{
 
 .container_skills .col-6 {
   margin-bottom: 1rem;
-
+}
+.container_skills div[class^='col-5']{
+  padding: 0;
 }
 
 .pad {
     margin-top: 3rem !important;
 }
 
+
 .container_skills .col-md-3{
   display: flex;
 }
 
-.container_skills span{
-  margin-left: 1rem;
-}
+// .container_skills span{
+//   // margin-left: 1rem;
+// }
 
  article h2{
   font-size: 2.5rem;
@@ -62,9 +65,17 @@ article h2:after{
 }
 
 hr{
-  margin-top: 7rem;
+  margin-top: 3rem;
   margin-bottom: 3rem;
 }
+
+@media (min-width: 992px) {
+ hr{
+  margin-top: 7rem;
+  margin-bottom: 3rem;
+ }
+}
+
 
 
 // ABOUT
@@ -74,10 +85,17 @@ hr{
   color: white;
   display: flex;
   align-items: center;
-  padding: 2rem;
+  padding: 3rem 1rem;
   font-size: 1rem;
   line-height: 2.5;
 }
+
+@media (min-width: 992px) {
+  .about_card_text{
+    padding: 2rem 2rem;
+  }
+}
+
 
 .about_card .col-6{
   margin: 0px;
@@ -111,14 +129,22 @@ hr{
 .experience_card{
   background-color: whitesmoke;
   padding: 1.5rem;
-  margin-bottom: 8rem;
+  margin-bottom: 3rem;
 }
+
+@media (min-width: 992px) {
+  .experience_card{
+    margin-bottom: 8rem;
+  }
+ }
+
 
 .experience_card ul{
   font-size: .9rem;
   margin-top: 2rem;
   margin-left: 0;
-    padding-left: 1rem;
+  padding-left: 0px;
+
 }
 
 
@@ -153,13 +179,13 @@ hr{
 
 .job_title{
   background-color: #ff4338;
-    padding: .2rem 0.6rem;
-    color: white;
-    border-radius: 5rem;
-    letter-spacing: .5px;
-    margin-top: .5rem;
-    display: inline-block;
-    font-size: 1rem;
+  padding: .2rem 0.6rem;
+  color: white;
+  border-radius: 5rem;
+  letter-spacing: .5px;
+  margin-top: .5rem;
+  display: inline-block;
+  font-size: 1rem;
 }
 
 .related_work-cards img{
@@ -174,43 +200,34 @@ hr{
   flex-direction: column;
 }
 
-// .related_work-cards{
-//   column-count: 4;
-// }
 
-// .related_work-cards div{
-//   box-shadow: 2px 2px 2px black;
-// }
-
-// Social
-.social_card .row{
-  display: flex;
+  // Social
+  .social_card .row{
+    display: flex;
     align-items: center;
     justify-content: center;
-}
+  }
 
-.social_card div{
-  padding: 1rem 1rem 4rem 1.5rem;
-}
+  .social_card div{
+    padding: 0 .5rem 3rem 0.5rem;
+  }
 
-.social_card svg{
-  height: 2rem;
-}
+  .social_card svg{
+    height: 2rem;
+  }
 
-// @media (min-width: 768px) {
+  @media (min-width: 992px) {
+    .social_card div{
+      padding: 1rem 1rem 4rem 1.5rem;
 
-//   .social_card div{
-//     padding: 3rem 1.5rem;
-
-//   }
-
-//  }
+    }
+  }
 
 // footer
 
 .footer_card{
   background-color: whitesmoke;
-  padding: 4rem;
+  padding: 4rem 0rem;
   text-align: center;
 }
 

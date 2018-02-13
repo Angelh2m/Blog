@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+import { Title, Meta, MetaDefinition } from '@angular/platform-browser';
 
 
 @Component({
@@ -9,7 +10,17 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class ArticleComponent implements OnInit {
 
-  title = 'Hello';
+  articleTitle = 'Updating Metatags';
+  metaDescription: MetaDefinition = {
+    name: 'description',
+    content: 'The content of the article and the snnipet'
+  };
+  metaKeywords: MetaDefinition = {
+    name: 'keywords',
+    content: 'My keywords list'
+  };
+
+
   images = {
     image1: '../../assets/local/image1.jpeg',
     image2: '../../assets/local/image2.jpeg',
@@ -20,10 +31,22 @@ export class ArticleComponent implements OnInit {
 
 
   constructor(
-    private router: Router
+    private router: Router,
+    public title: Title,
+    public meta: Meta
   ) { }
 
   ngOnInit() {
+
+    this.title.setTitle(this.articleTitle);
+    this.meta.updateTag(this.metaDescription);
+    this.meta.updateTag(this.metaKeywords);
+    this.meta.addTags([
+      { name: 'twitter:title', content: 'Content Title' },
+      { property: 'og:title', content: 'Content Title' }
+    ]);
+
+
     // This init will scroll the window to top when the
     // page is loaded
     this.router.events.subscribe(start => {
@@ -31,7 +54,7 @@ export class ArticleComponent implements OnInit {
     });
   }
 
-  socialWindow(type: string, url: string, text: string) {
+  socialWindow(type: string, url?: string, text?: string) {
 
     if (type === 'facebook') {
       window.open(

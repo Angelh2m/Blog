@@ -5,11 +5,12 @@ import { PagesComponent } from './pages/pages.component';
 
 const appRoutes: Routes = [
   // { path: '', component: PortfolioComponent },
-  { path: 'portfolio', component: PortfolioComponent },
+  { path: '', component: PortfolioComponent },
   {
-    path: '',
+    path: 'blog',
     component: PagesComponent,
     // This will load the pages module with all the child routes
+    // This is what is called Lazy loading
     loadChildren: './pages/pages.module#PagesModule'
   },
 ];
