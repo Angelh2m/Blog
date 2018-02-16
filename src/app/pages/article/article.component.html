@@ -1,11 +1,11 @@
 <div class="col-md-12">
   <header class="article_head">
-    <a routerLink="/lifestyle">
+    <a routerLink="../../lifestyle">
       <strong class="category">Lifestyle</strong>
     </a>
 
     <h1 class="article_title">
-      Here is the big name
+      {{article?.name}}
     </h1>
   </header>
   <div class=" author_time">
@@ -36,7 +36,7 @@
                       c-3.7,0-6.8-3-6.8-6.8s3-6.8,6.8-6.8s6.8,3,6.8,6.8S12.7,15.8,9,15.8z" />
     </svg>
     <time>
-      Dec.15.2017
+      {{article?.createdAt | date}}
     </time>
   </div>
 </div>
@@ -240,28 +240,13 @@
   </div>
 
   <a routerLink="/category/What-to-do-this-summer">
-    <img [src]="images.image1"
+    <img src="{{article?.image}}"
       class="img-fluid">
   </a>
 
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras bibendum accumsan lacus vitae varius. Praesent at diam eget
-    mi imperdiet vestibulum. Fusce molestie placerat nisi, sed viverra lectus. Donec sed nibh a purus maximus vestibulum.
-    Proin quis mollis velit. Nulla facilisi.
-    <br>
-    <br> Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed auctor purus in condimentum
-    suscipit. Cras sit amet ipsum augue. Integer sodales, diam sed vulputate varius, purus sapien facilisis diam, et feugiat
-    nibh lacus ultrices velit. Etiam mattis, tellus non tempus ullamcorper, diam nisl pharetra elit, eu pellentesque lorem
-    ipsum a ante. Nam blandit tincidunt nisi, eu maximus tortor rhoncus nec.
-    <br>
-    <br> Proin gravida ut elit in efficitur. Etiam sit amet tempus dui, id pulvinar nisl. Vivamus consequat condimentum arcu,
-    vitae sollicitudin risus blandit ut. Ut ligula massa, porttitor vitae orci eu, porttitor hendrerit nisi. Donec nibh ex,
-    malesuada ut libero bibendum, feugiat aliquet enim. Cras eu tellus ultrices augue ornare pellentesque sit amet vel justo.
-    Vestibulum sem elit, maximus at mattis porta, condimentum sit amet est. Aliquam erat volutpat. Pellentesque finibus massa
-    massa, sed egestas elit facilisis vitae. Integer eu hendrerit felis, non dictum sapien. Ut commodo sapien ligula. Etiam
-    at aliquam neque. Sed dictum augue nisi. Etiam et urna sem. Proin sodales accumsan lectus, eget vestibulum odio tempus
-    at. Sed et mi pellentesque, tincidunt justo a, feugiat massa. Duis sapien tortor, sagittis eget ligula ut, porttitor
-    congue nulla. Duis quis vestibulum lectus.
+  <p [innerHTML]="article?.content">
+
+
   </p>
 
   <div class="social">

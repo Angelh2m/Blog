@@ -9,6 +9,9 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { APP_ROUTES } from './app.routes';
 // Import all shared Modules
 import { SharedModule } from './shared/shared.module';
+// Import shared Services
+import { ServiceModule } from './services/service.module';
+import { AdminComponent } from './admin/admin.component';
 
 
 
@@ -18,13 +21,14 @@ import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
-    PagesComponent,
     PortfolioComponent,
-
+    PagesComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
     SharedModule,
+    ServiceModule,
     APP_ROUTES
   ],
   providers: [],

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticleService } from '../../services/article/article.service';
+import { Article } from '../../models/article.model';
 
 @Component({
   selector: 'app-home-page',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
+
+  articles: Article;
 
   images = {
     image1: '../../assets/local/image1.jpeg',
@@ -16,9 +20,18 @@ export class HomePageComponent implements OnInit {
   };
 
 
-  constructor() { }
+  constructor(
+    private articleService: ArticleService
+  ) { }
 
   ngOnInit() {
+    this.articleService.getArticles()
+      .subscribe(resp => {
+        this.articles = resp;
+        console.log(resp);
+
+
+      });
   }
 
 }
