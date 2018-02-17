@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticleService } from '../../services/article/article.service';
+import { ActivatedRoute } from '@angular/router';
+import { Article } from '../../models/article.model';
 
 @Component({
   selector: 'app-categories',
@@ -15,11 +18,25 @@ export class CategoriesComponent implements OnInit {
     food: '../../assets/local/imagefood.jpg',
   };
 
+  articles: Article;
+
+  constructor(
+    public _articles: ArticleService,
+    public activatedRoute: ActivatedRoute
+  ) {
+
+    const catName: string = this.activatedRoute.snapshot.params.category;
 
 
-  constructor() { }
+    this._articles.getCategories(catName)
+      .subscribe(resp => this.articles = resp );
+
+
+  }
 
   ngOnInit() {
+
+
   }
 
 }

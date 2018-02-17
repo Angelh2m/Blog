@@ -1,14 +1,16 @@
 <section class="col-md-8">
   <h2 class="section_heading">WHAT'S NEW</h2>
 
-  <article>
+  <article *ngFor="let article of articles">
     <div class="row reverse">
-      <div class="col-md-6  ">
+      <div class="col-md-6 ">
 
-        <h2 class="section_title">What to do this summer</h2>
+        <h2 class="section_title">
+          {{ article?.name}}
+        </h2>
         <footer class="author_time">
           <span>
-            AngelHernandezM
+            {{ article?.author.name }}
           </span>
           <!-- Time -->
           <svg version="1.1"
@@ -34,121 +36,19 @@
                             c-3.7,0-6.8-3-6.8-6.8s3-6.8,6.8-6.8s6.8,3,6.8,6.8S12.7,15.8,9,15.8z" />
           </svg>
           <time>
-            Dec.15.2017
+            {{ article?.createdAt | date }}
           </time>
         </footer>
       </div>
 
 
       <div class="col-md-6 ">
-        <a routerLink="/category/What-to-do-this-summer">
-          <img [src]="images.image1"
+
+        <a routerLink="../{{article?.category}}/{{article?.url}}">
+          <img src="{{article?.image}}"
             class="img-fluid">
         </a>
       </div>
     </div>
   </article>
-
-  <article>
-    <div class="row reverse">
-      <div class="col-md-6  ">
-
-        <h2 class="section_title">What to do this summer</h2>
-        <footer class="author_time">
-          <span>
-            AngelHernandezM
-          </span>
-          <!-- Time -->
-          <svg version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-            x="0px"
-            y="0px"
-            width="18px"
-            height="18px"
-            viewBox="0 0 18 18"
-            style="enable-background:new 0 0 18 18;"
-            xml:space="preserve">
-            <style type="text/css">
-              .time {
-                fill: #333333;
-              }
-            </style>
-            <defs>
-            </defs>
-            <path class="time"
-              d="M11.6,13.2L7.9,9.5v-5h2.2v4l3,3L11.6,13.2z M9,0C4,0,0,4,0,9s4,9,9,9s9-4,9-9S14,0,9,0z M9,15.8
-                            c-3.7,0-6.8-3-6.8-6.8s3-6.8,6.8-6.8s6.8,3,6.8,6.8S12.7,15.8,9,15.8z" />
-          </svg>
-          <time>
-            Dec.15.2017
-          </time>
-        </footer>
-      </div>
-
-
-      <div class="col-md-6 ">
-        <a routerLink="/category/What-to-do-this-summer">
-          <img [src]="images.image2"
-            class="img-fluid">
-        </a>
-      </div>
-    </div>
-  </article>
-
-  <article>
-    <div class="row reverse">
-      <div class="col-md-6  ">
-
-        <h2 class="section_title">What to do this summer</h2>
-        <footer class="author_time">
-          <span>
-            AngelHernandezM
-          </span>
-          <!-- Time -->
-          <svg version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-            x="0px"
-            y="0px"
-            width="18px"
-            height="18px"
-            viewBox="0 0 18 18"
-            style="enable-background:new 0 0 18 18;"
-            xml:space="preserve">
-            <style type="text/css">
-              .time {
-                fill: #333333;
-              }
-            </style>
-            <defs>
-            </defs>
-            <path class="time"
-              d="M11.6,13.2L7.9,9.5v-5h2.2v4l3,3L11.6,13.2z M9,0C4,0,0,4,0,9s4,9,9,9s9-4,9-9S14,0,9,0z M9,15.8
-                              c-3.7,0-6.8-3-6.8-6.8s3-6.8,6.8-6.8s6.8,3,6.8,6.8S12.7,15.8,9,15.8z" />
-          </svg>
-          <time>
-            Dec.15.2017
-          </time>
-        </footer>
-      </div>
-
-
-      <div class="col-md-6 ">
-        <a routerLink="/category/What-to-do-this-summer">
-          <img [src]="images.image3"
-            class="img-fluid">
-        </a>
-      </div>
-    </div>
-  </article>
-
-
-
-
-
-
-
 </section>

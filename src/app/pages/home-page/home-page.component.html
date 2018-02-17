@@ -13,11 +13,6 @@
     <article *ngFor="let article of articles">
       <h2 class="section_title">{{article?.name}}</h2>
 
-      <a [routerLink]="[article.category, article.url ]">
-        <img src="{{article?.image}}"
-          alt=""
-          class="img-fluid">
-      </a>
       <footer class="author_time">
         <span>
           {{article.author?.name}}
@@ -43,12 +38,19 @@
           </defs>
           <path class="time"
             d="M11.6,13.2L7.9,9.5v-5h2.2v4l3,3L11.6,13.2z M9,0C4,0,0,4,0,9s4,9,9,9s9-4,9-9S14,0,9,0z M9,15.8
-                              c-3.7,0-6.8-3-6.8-6.8s3-6.8,6.8-6.8s6.8,3,6.8,6.8S12.7,15.8,9,15.8z" />
+                                          c-3.7,0-6.8-3-6.8-6.8s3-6.8,6.8-6.8s6.8,3,6.8,6.8S12.7,15.8,9,15.8z" />
         </svg>
         <time>
           {{article?.createdAt | date}}
         </time>
       </footer>
+
+      <a [routerLink]="[article.category, article.url ]">
+        <img src="{{article?.image}}"
+          alt=""
+          class="img-fluid">
+      </a>
+
 
     </article>
 

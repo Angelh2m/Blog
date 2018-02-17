@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MetaTagsService } from './meta-tags/meta-tags.service';
 import { UserService } from './user/user.service';
 import { LoginGuardGuard } from './guards/login-guard.guard';
-import { UrlVerifyGuard } from './guards/url-verify.guard';
+
 
 @NgModule({
   imports: [
@@ -17,7 +17,7 @@ import { UrlVerifyGuard } from './guards/url-verify.guard';
     MetaTagsService,
     UserService,
     LoginGuardGuard,
-    UrlVerifyGuard,
+
   ],
   declarations: []
 })

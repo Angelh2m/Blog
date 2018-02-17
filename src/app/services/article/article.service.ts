@@ -39,4 +39,15 @@ export class ArticleService {
   }
 
 
+  getCategories( category: string ) {
+    const url = `${URL_SERVICES}/search/${category}`;
+
+    return this.http.get(url)
+      .map((resp: any) => {
+
+        console.log(resp.categories);
+        return resp.categories;
+      });
+  }
+
 }
