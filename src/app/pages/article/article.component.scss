@@ -1,4 +1,13 @@
 
+.article_category{
+    display: flex;
+    align-items: center;
+
+    .social{
+      margin-left: 1rem;
+    }
+}
+
 .article_head{
   // margin-bottom: 2rem;
   border-bottom: solid 1px gray;
@@ -20,4 +29,15 @@ section p{
   font-weight: 500;
   margin-bottom: 0rem;
   display: inline-block;
+}
+
+.article_content{
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    letter-spacing: .1px;
+    line-height: 1.6;
+
+  p{
+    margin-top: 2rem;
+  }
 }
