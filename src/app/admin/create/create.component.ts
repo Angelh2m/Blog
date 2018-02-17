@@ -19,14 +19,13 @@ export class CreateComponent implements OnInit {
   saveArticle() {
 
     const article = new Article(
+
       this.form.value.name,
       this.form.value.category,
-      this.form.value.author,
       this.form.value.content,
-      this.form.value.date,
       this.form.value.labels,
-      this.form.value.comments,
       this.form.value.image,
+
     );
 
     this._articleService.createArticle(article)
