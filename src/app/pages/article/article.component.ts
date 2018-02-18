@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 // Meta tags Service
 import { MetaTagsService } from '../../services/meta-tags/meta-tags.service';
 import { ArticleService } from '../../services/article/article.service';
@@ -78,13 +78,14 @@ export class ArticleComponent implements OnInit {
 
 
   loadMetas() {
-    // Load all the variables
-    // console.log(this.article.name);
-    this.seo.articleTitle = this.article.name || 'nothing' ;
-    this.seo.metaDescription.content = 'Description';
-    this.seo.metaKeywords.content = 'Keywords';
-    // Set all Meta tags
-    this.seo.metas();
+
+    this.seo.metas({
+      title: this.article.name || 'nothing' ,
+      description: this.article.labels,
+      keywords: this.article.labels,
+      image: this.article.image,
+    });
+
   }
 
   scrollTop() {

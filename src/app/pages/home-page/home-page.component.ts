@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleService } from '../../services/article/article.service';
 import { Article } from '../../models/article.model';
+import { MetaTagsService } from '../../services/meta-tags/meta-tags.service';
 
 @Component({
   selector: 'app-home-page',
@@ -11,17 +12,10 @@ export class HomePageComponent implements OnInit {
 
   articles: Article;
 
-  images = {
-    image1: '../../assets/local/image1.jpeg',
-    image2: '../../assets/local/image2.jpeg',
-    image3: '../../assets/local/image3.jpeg',
-    hero: '../../assets/local/hero.jpeg',
-    food: '../../assets/local/imagefood.jpg',
-  };
-
-
   constructor(
-    private articleService: ArticleService
+    private articleService: ArticleService,
+    public seo: MetaTagsService,
+
   ) { }
 
   ngOnInit() {
@@ -30,8 +24,22 @@ export class HomePageComponent implements OnInit {
         this.articles = resp;
         console.log(resp);
 
-
       });
+
+      this.loadMetas();
+
   }
+
+  loadMetas() {
+
+    this.seo.metas({
+      title: ' AngelHam | Angel Hernandez' || 'nothing' ,
+      description: 'Tech blog',
+      // keywords: this.articles.labels,
+      // image: this.articles.image,
+    });
+
+  }
+
 
 }

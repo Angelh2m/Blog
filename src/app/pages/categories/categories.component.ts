@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ArticleService } from '../../services/article/article.service';
 import { ActivatedRoute } from '@angular/router';
 import { Article } from '../../models/article.model';
+import { MetaTagsService } from '../../services/meta-tags/meta-tags.service';
 
 @Component({
   selector: 'app-categories',
@@ -10,33 +11,38 @@ import { Article } from '../../models/article.model';
 })
 export class CategoriesComponent implements OnInit {
 
-  images = {
-    image1: '../../assets/local/image1.jpeg',
-    image2: '../../assets/local/image2.jpeg',
-    image3: '../../assets/local/image3.jpeg',
-    hero: '../../assets/local/hero.jpeg',
-    food: '../../assets/local/imagefood.jpg',
-  };
-
   articles: Article;
+  currentCategory: string;
 
   constructor(
     public _articles: ArticleService,
-    public activatedRoute: ActivatedRoute
+    public activatedRoute: ActivatedRoute,
+    public seo: MetaTagsService,
   ) {
 
-    const catName: string = this.activatedRoute.snapshot.params.category;
+    this.currentCategory = this.activatedRoute.snapshot.params.category;
 
 
-    this._articles.getCategories(catName)
+    this._articles.getCategories(this.currentCategory)
       .subscribe(resp => this.articles = resp );
 
 
   }
 
   ngOnInit() {
+    this.loadMetas();
+  }
 
+  loadMetas() {
+
+    this.seo.metas({
+      title: this.currentCategory + ' AngelHam' || 'nothing' ,
+      // description: this.articles.labels,
+      // keywords: this.articles.labels,
+      // image: this.articles.image,
+    });
 
   }
+
 
 }
