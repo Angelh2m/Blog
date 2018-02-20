@@ -11,6 +11,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class CreateComponent implements OnInit {
 
   form: FormGroup;
+  style: string;
+  content: string;
+  isActive: boolean;
 
   constructor(
     public _articleService: ArticleService
@@ -28,10 +31,12 @@ export class CreateComponent implements OnInit {
 
     );
 
+    console.log(this.form.value);
+    // console.log(article);
+
     this._articleService.createArticle(article)
       .subscribe(resp => console.log(resp));
 
-    console.log(this.form.value);
   }
 
 
@@ -51,11 +56,77 @@ export class CreateComponent implements OnInit {
   }
 
 
+  control(style) {
+
+    const focus = document.getElementById('content');
 
 
-  // const article = new Article(
-  //   this.form.value.name,
-  //   this.form.value.name,
-  // )
+    focus.focus();
+
+
+    // document.selection.createRange();
+
+    // let sel = window.getSelection();
+    // sel.getRangeAt(0);
+
+    // console.log(sel);
+
+    // let sel = window.getSelection();
+    // sel.getRangeAt(0);
+
+    // var range = document.createRange();
+    // range.setStart(1, 2);
+
+    // console.log(range);
+
+
+
+
+
+    const allowedFormats = ['h1', 'h2', 'h4', 'p'];
+
+    this.applyStyles(style);
+
+    /**
+    *  Set the value of the text area
+    */
+    const content = document.getElementById('content').innerHTML;
+
+    const cleanHTML = content.replace(/<[^\/>][^>]*><br><\/[^>]+>/, '');
+
+    this.form.value.content = cleanHTML;
+    this.content = cleanHTML;
+
+
+    if (this.style === 'img') {
+
+      const link = prompt('Link')
+
+      var html = `<img class="img-fluid" src="${link}"alt="test"/>`;
+
+      document.execCommand('insertHTML', false, html);
+
+    }
+
+
+    /**
+    *  If its a H1 H2 H3 H4 p
+    */
+    if (allowedFormats.indexOf(this.style) >= 0 ) {
+      console.log(this.style);
+      return document.execCommand('formatBlock', false, `<${this.style}>`);
+    }
+
+
+  }
+
+
+  applyStyles(style: string) {
+    document.execCommand(this.style, false, null);
+  }
+
+
+
+
 
 }

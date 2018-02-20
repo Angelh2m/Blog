@@ -37,20 +37,58 @@
   <div class="form-row">
     <div class="form-group">
       <label>Content</label>
+      {{ isActive }}
+      <div class="buttons">
+        <br>
+        <span (click)="style = 'bold'; isActive = 'true';">
+          Bold
+        </span>
 
-      <div formControlName='content'
-        name="content"
+        <span (click)="style = 'italic'; control($event) ">
+          Italic
+        </span>
+
+        <span (click)="style = 'justifyCenter'">
+          Center
+        </span>
+        <span (click)="style = 'underline'">
+          Unerline
+        </span>
+        <span (click)="style = 'h1' ">
+          h1
+        </span>
+        <span (click)="style = 'h2'; isActive = 'true'; ">
+          h2
+        </span>
+        <span (click)="style = 'p' ">
+          P
+        </span>
+        <span (click)="style = 'img' ">
+          img
+        </span>
+        <span (click)="style = '' ">
+          inactive
+        </span>
+      </div>
+
+      <div class="edit"
+        name='Field'
+        id="content"
+        (click)="control();"
         contenteditable="true">
         This text can be edited by the user.
       </div>
 
+      <!-- formControlName='content' name="content" -->
 
-
+      {{content | json }}
       <!-- <textarea formControlName='content'
         name="content"
         class="form-control"
         id="exampleFormControlTextarea1"
-        rows="3"></textarea> -->
+        rows="3">
+        <div id="content">{{content}}</div>
+      </textarea> -->
     </div>
   </div>
 

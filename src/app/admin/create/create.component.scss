@@ -1,0 +1,28 @@
+.edit {
+  background-color: whitesmoke;
+  padding: 2rem;
+  width: 80vw;
+}
+
+textarea {
+  background-color: transparent !important;
+}
+
+form {
+  > * {
+    transition: all 0s !important;
+  }
+}
+
+.buttons {
+  & span {
+    background-color: #3f51b5;
+    padding: 0.5rem;
+    margin: 0.2rem;
+    color: white;
+    border-radius: 0.2rem;
+  }
+  & span:focus {
+    background-color: #98a1d1;
+  }
+}
