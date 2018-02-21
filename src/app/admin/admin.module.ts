@@ -9,13 +9,15 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { InputFormatDirective } from './input-format.directive';
+import { ToolsComponent } from './tools/tools.component';
 
 @NgModule({
   declarations: [
     CreateComponent,
     RegisterComponent,
     LoginComponent,
-    InputFormatDirective
+    InputFormatDirective,
+    ToolsComponent
   ],
   imports: [
     ReactiveFormsModule,

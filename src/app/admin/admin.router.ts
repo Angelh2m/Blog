@@ -4,6 +4,7 @@ import { AdminComponent } from './admin.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { LoginGuardGuard } from '../services/guards/login-guard.guard';
+import { ToolsComponent } from './tools/tools.component';
 
 
 
@@ -19,6 +20,11 @@ const adminRoutes: Routes = [
     path: 'register',
     component: RegisterComponent,
     data: { titulo: 'Create account' }
+  },
+  {
+    path: 'tools',
+    component: ToolsComponent,
+    data: { titulo: 'Tools' }
   },
   {
     path: '',

@@ -37,12 +37,20 @@
   <div class="form-row">
     <div class="form-group">
       <label>Content</label>
-      {{ isActive }}
+
       <div class="buttons">
         <br>
-        <span (click)="style = 'bold'; isActive = 'true';">
+        <span (click)="editor()">
           Bold
         </span>
+
+        <input type="button"
+          value="B"
+          onmousedown="document.execCommand('bold',false,null); return false">
+
+        <input type="button"
+          value="C"
+          onmousedown="document.execCommand('italic',false,null); return false">
 
         <span (click)="style = 'italic'; control($event) ">
           Italic
@@ -74,7 +82,7 @@
       <div class="edit"
         name='Field'
         id="content"
-        (click)="control();"
+        (click)="control(); "
         contenteditable="true">
         This text can be edited by the user.
       </div>

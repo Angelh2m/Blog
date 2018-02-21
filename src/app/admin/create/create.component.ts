@@ -13,7 +13,7 @@ export class CreateComponent implements OnInit {
   form: FormGroup;
   style: string;
   content: string;
-  isActive: boolean;
+
 
   constructor(
     public _articleService: ArticleService
@@ -55,32 +55,38 @@ export class CreateComponent implements OnInit {
 
   }
 
+    // // [ 1 ] Select the texarea
+    // const text = document.getElementById('content');
+    // // [ 2 ] Create a range where the accion will happen
+    // let range = document.createRange();
+    // // [ 3 ] Specify what you need to work on
+    // range.selectNode(text);
+    // // [ 4 ] Get the window object to work on your selection
+    // window.getSelection().addRange(range);
+    // // [ 5 ] Execute anything you want from this point
+
+    // // document.execCommand('copy');
+    // document.execCommand(style, false, null);
+
+
+  editor() {
+
+     // [ 1 ] Select the texarea
+     const text = document.getElementById('content');
+     // [ 2 ] Create a range where the accion will happen
+    let range = document.createRange();
+     // [ 3 ] Specify what you need to work on
+     range.selectNode(text);
+     // [ 4 ] Get the window object to work on your selection
+     window.getSelection().addRange(range);
+     // [ 5 ] Execute anything you want from this point
+
+     // document.execCommand('copy');
+     document.execCommand('bold', false, null);
+  }
+
 
   control(style) {
-
-    const focus = document.getElementById('content');
-
-
-    focus.focus();
-
-
-    // document.selection.createRange();
-
-    // let sel = window.getSelection();
-    // sel.getRangeAt(0);
-
-    // console.log(sel);
-
-    // let sel = window.getSelection();
-    // sel.getRangeAt(0);
-
-    // var range = document.createRange();
-    // range.setStart(1, 2);
-
-    // console.log(range);
-
-
-
 
 
     const allowedFormats = ['h1', 'h2', 'h4', 'p'];
