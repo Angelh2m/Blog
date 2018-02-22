@@ -1,0 +1,15 @@
+<h6>Toggle classes </h6>
+<div class="multiple"
+  *ngFor="let person of data; let i = index">
+  <!-- <li [ngClass]="{'active': active, 'activeNot': !active  }"
+    (click)='click()'>{{i}} {{person.name}}</li> -->
+  <li [ngClass]="{active: id === i}"
+    (click)='addClass(i)'>{{i}} {{person.name}}</li>
+</div>
+
+<br>
+<h6>Get Values using #selector </h6>
+
+<input type="text"
+  #email
+  (keyup.enter)="onKeyUp(email)">
